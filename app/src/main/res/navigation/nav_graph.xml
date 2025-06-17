@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.itis.bookclub.presentation.signin.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.itis.bookclub.presentation.list.BookListFragment"
+        android:label="BookListFragment" >
+        <action
+            android:id="@+id/action_bookListFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment"
+            app:popUpTo="@id/bookListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.itis.bookclub.presentation.details.BookDetailsFragment"
+        android:label="BookDetailsFragment">
+
+        <argument
+            android:name="bookId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.itis.bookclub.presentation.signup.SignUpFragment"
+        android:label="SignUpFragment" />
+    <fragment
+        android:id="@+id/libraryListFragment"
+        android:name="com.itis.bookclub.presentation.librarylist.LibraryListFragment"
+        android:label="fragment_library_list"
+        tools:layout="@layout/fragment_library_list" >
+        <action
+            android:id="@+id/action_libraryListFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment"
+            app:popUpTo="@id/libraryListFragment" />
+    </fragment>
+
+
+</navigation>
